@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+		
+	</script>
+</head>
+	<style>
+		body,html{
+			padding: 0px ;
+			margin: 0px;
+			height: 100%;
+		}
+		.head{
+			width: 100%;
+			height: auto;
+			background: #009688;
+			padding: 6px 0px;
+			position: fixed;
+		}
+		.tit-head{
+			color: white;
+			font-family: monospace;
+			font-weight: lighter;
+			line-height: 1;
+			font-size: 19px;
+			margin: 0;
+			text-align: center;
+		}
+		
+		.burg-menu{
+			width: 200px;
+			height: 100%;
+			left: -200px;
+			background: lightgray;
+			position: fixed;
+			transition-duration: 0.3s;
+			transition-timing-function: ease-in-out;
+			padding:0px;
+		}
+		
+		button{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: 20px;
+			align-items: center;
+		}
+		
+		.titl{
+			width: 200px;
+			height: 31px;
+			background: rgba(0,0,0,0.5);
+			margin:0px;
+			display: flex;
+			justify-content: center;
+		}
+		.h1-tit{
+			margin: auto;
+			display: block;
+			font-size: 19px;
+			color: white;
+			line-height: 1;
+			font-weight: lighter;
+			font-family: monospace;
+		}
+		.fot-bur{
+			width: 30px;
+			height: 30.5px;
+			float: right;
+			margin-right: -30px;
+			background: #009688;
+		}
+		.fot-bur:hover{
+			background:lightgray;
+			cursor: pointer;
+		}
+		.fot-bur:hover .d-line{
+			background: black;
+		}
+		.fot-bur div:nth-of-type(1){
+			margin-top: 8px;
+		}
+		.d-line{
+			width: 17px;
+			height: 2px;
+			background: white;
+			margin: auto;
+			margin-top: 4px;
+		}
+		.cild-menu{
+			width: auto;
+			height: 30px;
+			border-bottom: px solid gray;
+			font-family: monospace;
+			font-size: 18px;
+			line-height: 1;
+			padding-top: 12px;
+			padding-left: 10px 
+		}
+		.cild-menu:hover{
+			background: white;
+			border-right: px solid #696969;
+			cursor: pointer;
+		}
+	
+		.block-elem{
+			width: 40%;
+			height: 70%;
+			box-shadow: 0px 0px 10px gray;
+			background: lightyellow;
+			margin:  auto;
+			animation-name: wh;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+			display: none;
+		}
+		@keyframes wh{
+			from{
+				opacity: 0;
+				filter: grayscale(100%);
+			}
+			to{
+				opacity: 1;
+				filter: grayscale(0%);
+			}
+		}
+		.menu-bl{
+			width: 20px;
+			height: 500px;
+			border: px solid black;
+			display: flex;
+			justify-content: center;
+			position: fixed;
+			margin-top: 100px;
+		}
+		.dbqp{
+			width: 100%;
+			height: 100%;
+			border: px solid black;
+			background-image: url(foto/tit-foto.jpg); 	
+			background-size: cover;
+			background-repeat: no-repeat;
+			display: flex;
+			justify-content: center;	
+			
+		}
+		.bad{
+			width: 100%;
+			height: auto;
+			border: px solid black;
+			display: flex;
+			justify-content: center;
+		}
+		.title-foto{
+			font-size: 70px;
+			color: black;
+			font-weight: lighter;
+			font-family: monospace;
+			line-height: 1;
+			margin: auto;
+			align-items: center;
+			text-align: center;
+		}
+		.sof{
+			font-family: monospace;
+			font-weight: lighter;
+			font-size: 30px;
+			line-height: 1;
+			display: block;
+			text-align: center;
+			margin-left: 500px;
+			margin: 50px auto;
+			margin-bottom: 50px;
+		}
+		.foto1{
+			width: 100%;
+			height: auto;
+			border: px solid black;
+		}
+		.bad-foto-one{
+			margin: auto;
+			margin-top: 0px;
+			width: 500px;
+			height: auto;
+			border: 1px solid gray;
+			padding-top: 33px;
+		}
+		.bad-foto-one2{
+			margin: auto;
+			margin-top: 0px;
+			width: 500px;
+			height: auto;
+			border: 1px solid gray;
+			align-items: center;
+			
+		}
+		.bad-foto-one3{
+			margin: auto;
+			margin-top: 0px;
+			width: 500px;
+			height: auto;
+			border: 1px solid gray;
+		}
+		.bad-foto-one4{
+			margin: auto;
+			margin-top: 0px;
+			width: 500px;
+			height: auto;
+			border: 1px solid gray;
+			padding-top: 42px;
+		}
+		.hv{
+			margin-top: 50px;
+		}
+		.hv:hover{
+			box-shadow: 0px 0px 8px  0px rgba(0,0,0,0.5);
+		}
+		.menu-bad{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			float: left;
+			width: 100%;
+			height: auto;
+			border: px solid black;
+		}
+		.char{
+			width: 100%;
+			height: auto;
+			border: px solid black;
+			margin-bottom: 0px
+		}
+		.discr{
+			text-align: center;
+			font-weight: lighter;
+			font-family: monospace;
+			font-size: 19px;
+			letter-spacing: 3px	;
+
+		}
+		.p{
+			display: block;
+			font-weight: lighter;
+			font-family: monospace;
+			font-size: 18px;
+			margin-left: 35px;
+			margin-right: 35px;
+			word-wrap: break-word;
+		}
+		hr{
+			margin-top: 0px;
+			border-color: black;
+			border: 0.5px solid gray;
+		}
+		.block-buy{
+			width: 100%;
+			height: 62px;
+			border-top: 1px solid gray;
+			background: #f0f0f0;
+		}
+		.buy{
+			width: 60px;
+			height: auto;
+			background-color: #009688;
+			font-family: monospace;
+			font-size: 17px;
+			line-height: 1;
+			font-weight: lighter;
+			padding: 10px 0px;
+			padding-left: 32px;
+			letter-spacing: 2px;
+			padding-right: 0px;
+			border-radius: 0px;
+			margin-top: 12px;
+			margin-right: auto;
+			margin-left: auto;
+			color: white;
+		}
+		.buy:hover{
+			background: lightgray;
+			color: black;
+			cursor: pointer;
+		}
+		.buy:active{
+			background: #009688;
+			color: white;
+			cursor: pointer;
+		}
+		.price{
+			font-family: monospace;
+			font-size: 19px;
+			line-height: 1;
+			font-weight: lighter;
+			text-align: center;
+		}
+		.betw{
+			margin-top: 65px;
+			border: none;
+			height: 2.5px;
+			background-image: linear-gradient(to right , gray , #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray, #009688 , gray)
+		}
+	</style>
+<body>
+	
+	<div class="osn">
+		<div class="head">
+			<h1 class="tit-head">OUR WORK</h1>
+		</div>
+	<div class="burg-menu" id="b-menu">
+		<div class="titl">
+			<h1 class="h1-tit">MENU</h1>
+			<div class="fot-bur" id="but">
+				<div class="d-line"></div>
+				<div class="d-line"></div>
+				<div class="d-line"></div>
+			</div>
+		</div>
+			<div class="cild-menu" id="but-tm">Team</div>
+			<div class="cild-menu" id="but-wk">Work</div>
+			<div class="er" style="background: #ccc">
+			<div class="cild-menu" id="but-sof">Sofes</div>
+			<div class="cild-menu" id="but-cab">Cabinets</div>
+			<div class="cild-menu" id="but-tab">Tables</div>
+		</div>
+		<div class="cild-menu" id="but-ct">Contacts</div>
+	</div>
+</div>
+	<div class="dbqp" id="r">
+		<h1 class='title-foto'>WOODEN PRODUCTS</h1>
+	</div>
+	<h1 class="sof" style="margin-bottom: 0px">SOFAS</h1>
+	<div class="bad" id="tot">
+		
+		<div class="menu-bad">
+		<div class="bad-foto-one hv" >
+			<img src="foto/bed1.jpg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 50sm. , length: 2m. , tree: oak , weight: 500kg , not folding , lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $1200</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+		<div class="bad-foto-one2 hv">
+			<img src="foto/bed2.png" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 30sm. , length: 2m. , tree: oak , weight: 270kg , valanced , lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $1700</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+		<div class="bad-foto-one3 hv">
+			<img src="foto/bed3.jpg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 40sm. , length: 1.8m. , tree: oak , weight: 600kg , valanced , not lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $2100</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+		<div class="bad-foto-one4 hv">
+			<img src="foto/bed4.jpg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 60sm. , length: 2m. , tree: oak , weight: 450kg , valanced , not lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $2100</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr class="betw">
+<h1 class="sof" style="margin-bottom: 0px" id="cab">CABINETS</h1>
+	<div class="bad" >
+		
+		<div class="menu-bad" >
+		<div class="bad-foto-one hv" style="margin-top: 50px">
+			<img src="foto/cab1.jpg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 2m. , length: 3m. , tree: oak , weight: 1100kg , not folding , lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $700</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+		<div  class="bad-foto-one2 hv" style="padding-top: 8.5px; margin-top: 50px">
+			<img src="foto/cab2.jpg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 2m. , length: 1.3m. , tree: oak , weight: 290kg , valanced , lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $400</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+		<div class="bad-foto-one3 hv">
+			<img src="foto/cab3.jpg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 40sm. , length: 1.8m. , tree: oak , weight: 600kg , valanced , not lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $2100</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+		<div class="bad-foto-one4 hv" style="padding-top: 0px">
+			<img src="foto/cab4.jpg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 60sm. , length: 2m. , tree: oak , weight: 450kg , valanced , not lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $2100</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr class="betw">
+<h1 class="sof" style="margin-bottom: 0px" id="tab">TABLES</h1>
+	<div class="bad" >
+		
+		<div class="menu-bad" >
+		<div class="bad-foto-one hv" style="margin-top: 50px; padding-top: 100px;" >
+			<img src="foto/tab1.jpg" class="foto1" style="margin-bottom: 85px">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 2m. , length: 3m. , tree: oak , weight: 1100kg , not folding , lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $700</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+		<div  class="bad-foto-one2 hv" style="padding-top: 8.5px; margin-top: 50px">
+			<img src="foto/tab2.jpg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 2m. , length: 1.3m. , tree: oak , weight: 290kg , valanced , lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $400</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+		<div class="bad-foto-one3 hv">
+			<img src="foto/tab3.jpeg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 40sm. , length: 1.8m. , tree: oak , weight: 600kg , valanced , not lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $2100</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+		<div class="bad-foto-one4 hv" style="padding-top: 80px">
+			<img src="foto/tab4.jpg" class="foto1">
+			<hr>
+			<div class="char">
+				<h3 class="discr">Description</h3>
+				<p class="p">Height: 60sm. , length: 2m. , tree: oak , weight: 450kg , valanced , not lacquered , without casing , soft mattress.</p>
+				<hr>
+				<p class="price">Price : $2100</p>
+
+				<div class="block-buy">
+					<div class="buy">BUY</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+	<div class="o">kkkkkkkkkkkkkkkkk</div>
+	
+	<script>
+		
+		var cl = document.getElementById('b-menu');
+		var but = document.getElementById('but');
+
+		var index = -1;
+		var fun = [fun1 , fun2];
+
+		function tog(){
+			index++;
+			var func = fun[index];
+			func();
+			if(index == fun.length -1){
+				index = -1;
+			}
+		$('.er').hide(1000);
+		}		
+		function fun1(){
+			cl.style.transform = "translateX(200px)"
+			$('.er').hide(1000);
+		}
+		
+		function fun2(){
+			cl.style.transform = "translateX(0px)"
+			$('.er').hide(1000);
+		}
+
+		but.addEventListener('click' , tog);
+		$('.er').hide(1000);
+
+		$('#but-wk').click( function(){
+			$('.er').toggle(300);
+		})
+		
+		$('#but-cab').click( function(){
+	      $('html, body').animate({
+	        scrollTop: $('#cab').offset().top - 70}, 2000);
+			fun.reverse()
+			fun2();
+		});
+		$('#but-tab').click( function(){
+	      $('html, body').animate({
+	        scrollTop: $('#tab').offset().top - 70}, 2000);
+			fun.reverse()
+			fun2();
+		});
+		$('#but-sof').click( function(){
+			var idr = $("#r").height(); 
+			$("html,body").animate({"scrollTop": idr},2000); 
+			fun2();
+			fun.reverse()
+		});
+
+
+		setTimeout(scrol , 2000)
+
+		function scrol(slow) {
+			var idr = $("#r").height(); 
+			$("html,body").animate({"scrollTop": idr},2000); 
+		}
+		
+
+
+	
+
+		
+	</script>
+</body>
+</html>
